@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleb.css">
+    <title>BLOG</title>
+</head>
+<body>
+    <div class="container">
+        <h1>BLOG</h1>
+        <form id="essayForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="essay">Your Essay:</label>
+            <textarea id="essay" rows="10" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="submittedEssays">
+            <h2>Submitted Essays</h2>
+            <ul id="essaysList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
