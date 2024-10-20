@@ -1,9 +1,10 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
-import { connect } from 'mongoose'
-import { login, logout, signup } from './controller/AuthController.js'
 import AuthRoutes from './routes/AuthRoutes.js'
+import MessageRoutes from './routes/MessageRoutes.js'
+import UserRoutes from './routes/UserRoutes.js'
+import CreateClassroomAndChannelRoutes from './routes/CreateClassroomAndChennelRoutes.js'
 import mongoose from 'mongoose'
 import cookieParser from 'cookie-parser'
 
@@ -18,6 +19,9 @@ app.use(express.json())
 app.use(cookieParser())
 
 app.use("/api/auth", AuthRoutes)
+app.use("/api/messages", MessageRoutes)
+app.use("/api/user", UserRoutes)
+app.use("/api/classroom", CreateClassroomAndChannelRoutes)
 
 app.listen(PORT, () => {
     console.log("Server is running on port", PORT)

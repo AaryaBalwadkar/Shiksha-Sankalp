@@ -27,6 +27,15 @@ const userSchema = new mongoose.Schema(
 			type: Boolean,
 			default: false,
 		},
+		imageUrl: {
+			type: String
+		},
+		classrooms: [
+			{
+				type: mongoose.Schema.Types.ObjectId,
+				ref: "Classroom",
+			},
+		],
 		resetPasswordToken: String,
 		resetPasswordExpiresAt: Date,
 		verificationToken: String,

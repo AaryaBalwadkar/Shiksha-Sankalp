@@ -5,7 +5,12 @@ import { GenerateTokenAndSetCookie } from "../utils/GenerateTokenAndSetCookie.js
 import { sendWelcomeEmail , sendPasswordResetEmail , SendVerificationEmail , sendResetSuccessEmail } from "../mailtrap/Emails.js"
 
 export const signup = async (req, res) => {
-    const {email, password, name, status} = req.body
+    const {email, password, name, status, id} = req.body
+
+	// if(password === confirmPassword){
+	// 	// return res.status(400).json({ success: false, message: "Passwords don't match" });
+	// 	console.log("OK")
+	// }
 
     try {
 		if (!email || !password || !name || !status) {
@@ -26,6 +31,7 @@ export const signup = async (req, res) => {
 			email,
 			password: hashedPassword,
 			name,
+			id,
 			status,
 			verificationToken,
 			verificationTokenExpiresAt: Date.now() + 24 * 60 * 60 * 1000, // 24 hours
@@ -36,7 +42,7 @@ export const signup = async (req, res) => {
 		// jwt
 		GenerateTokenAndSetCookie(res, user._id);
 
-		await SendVerificationEmail(user.email, verificationToken);
+		// await SendVerificationEmail(user.email, verificationToken);
 
 		res.status(201).json({
 			success: true,
@@ -68,7 +74,7 @@ export const verifyEmail = async (req, res) => {
 		user.verificationTokenExpiresAt = undefined;
 		await user.save();
 
-		await sendWelcomeEmail(user.email, user.name);
+		// await sendWelcomeEmail(user.email, user.name);
 
 		res.status(200).json({
 			success: true,

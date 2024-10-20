@@ -21,7 +21,7 @@ const Login = () => {
 	const handleLogin = async (e) => {
 		e.preventDefault();
 		await login(email, password);
-    navigate("/")
+    navigate("/home")
 	};
 
   const status_options = [
@@ -33,8 +33,12 @@ const Login = () => {
   const customStyles = {
     control: (provided) => ({
       ...provided,
+      display: 'flex',
       borderRadius: "30px",
-      textAign: "left",
+      width: "80%",
+      height: "45px",
+      justifyItems: 'center',
+      marginLeft: "35px"
     }),
   }
 
@@ -80,4 +84,5 @@ const Login = () => {
 }
 
 export default Login
+
 

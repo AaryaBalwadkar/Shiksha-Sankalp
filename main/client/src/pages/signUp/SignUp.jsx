@@ -1,23 +1,25 @@
 import React, { useState } from 'react'
+import './Signup.css'
 import Select from 'react-select'
-import { useAuthStore } from '../../store/AuthStore.js'
+import { useAuthStore } from '../../store/AuthStore';
+import { useNavigate } from 'react-router-dom';
 
-import './SignUp.css'
-
-const SignUp = () => {
+const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [status, setStatus] = useState('')
+  const navigate = useNavigate()
 
-  const { signup, error } = useAuthStore();
+  const { signup, error } = useAuthStore()
 
 	const handleSignUp = async (e) => {
 		e.preventDefault();
 
 		try {
 			await signup(email, password, name, status);
+      navigate("/email-verification")
 		} catch (error) {
 			console.log(error);
 		}
@@ -32,11 +34,14 @@ const SignUp = () => {
   const customStyles = {
     control: (provided) => ({
       ...provided,
+      display: 'flex',
       borderRadius: "30px",
+      width: "80%",
+      height: "45px",
+      justifyItems: 'center',
+      marginLeft: "35px"
     }),
   }
-
-
 
   return (
     <div>
@@ -52,9 +57,8 @@ const SignUp = () => {
             <form className="form-box login-form">
               <div className="form-inputs">
                 <div className="status-options">
+                  <Select options={status_options} styles={customStyles} onChange={(option) => setStatus(option.value)} />
                 </div>
-                <Select options={status_options} styles={customStyles} onChange={(option) => setStatus(option.value)}></Select>
-                {/* <p>Option picked by user: {status?.label}</p> */}
                 <div className="input-box">
                   <input type="text" className="inputs input-field" placeholder='Name' value={name} onChange={(e) => setName(e.target.value)} required />
                 </div>
@@ -68,13 +72,11 @@ const SignUp = () => {
                   <input type="password" className="inputs input-field" placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required></input>
                 </div>
               </div>
-              {error && <p className="error-message">{error}</p>}
+              {/* {error && <p className="error-message">{error}</p>} */}
               <div className="input-box">
-                <button type="submit" className="inputs submit-btn" onClick={handleSignUp}>Sign Up</button>
+              <button type="submit" className="inputs submit-btn" onClick={handleSignUp}>Sign Up</button>
               </div>
             </form>
-            {/* <label >Status Selected: {status}</label> */}
-            {/* <PasswordStrengthMeter password={password}></PasswordStrengthMeter> */}
           </div>
         </div>
       </div>
@@ -82,4 +84,6 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default Signup
+
+

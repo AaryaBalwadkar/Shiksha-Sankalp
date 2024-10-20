@@ -1,39 +1,49 @@
-import { useState } from 'react'
-import './App.css'
-import { Route, Routes } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import Home from './pages/home/Home.jsx'
 import Login from './pages/login/Login.jsx'
-import SignUp from './pages/signUp/SignUp.jsx'
-import newS from './pages/signUp/newS.jsx'
+import Signup from './pages/signup/Signup.jsx'
 import EmailVerification from './pages/emailVerification/EmailVerification.jsx'
-import { Toaster } from 'react-hot-toast'
-import HomePage from './pages/app/HomePage/HomePage.jsx'
+
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { useAuthStore } from './store/AuthStore.js'
+import AddClassroom from './pages/pagesForEditables/addClassroom/AddClassroom.jsx'
+import Channel from './components/channelSidebar/Channel.jsx'
 
-// redirect authenticated users to the home page
-const RedirectAuthenticatedUser = ({ children }) => {
-	const { isAuthenticated, user } = useAuthStore();
+const RedirectAuthenticatedUser = ((children) => {
+  const {isAuthenticated, user} = useAuthStore()
 
-	if (isAuthenticated && user.isVerified) {
-		return <Navigate to='/' replace />;
-	}
+  if(isAuthenticated && user.isVerified){
+    return <Navigate to="/home" replace />
+  }
+})
 
-	return children;
-};
+const App = () => {
+  const {isCheckingAuth, checkAuth, isAuthenticated, user} = useAuthStore()
 
-function App() {
+  useEffect(() => {
+    checkAuth()
+  }, [checkAuth])
+
+  console.log("isAuthenticated : ", isAuthenticated)
+  console.log("user : ", user)
   return (
     <div>
-      <Routes>
-        <Route path="*" element={"Home"} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/news" element={<newS />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/verify-email" element={<EmailVerification />} />
-      </Routes>
-      <Toaster />
+      <BrowserRouter>
+        <Routes>
+          <Route path="*" element={"WebPage"} />
+          <Route path="/home/*" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<RedirectAuthenticatedUser>
+            <Signup />
+            </RedirectAuthenticatedUser>} />
+          <Route path="/email-verification" element={<EmailVerification />} />
+          <Route path="/addclassroom" element={<AddClassroom />} />
+          <Route path="/classroom/:classroomId" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
 
 export default App
+

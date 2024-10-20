@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import './EmailVerification.css'
 import { useAuthStore } from '../../store/AuthStore'
+import { useState, useRef, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const EmailVerification = () => {
   const [code, setCode] = useState(["","","","","",""])
@@ -40,7 +40,7 @@ const EmailVerification = () => {
     console.log(verificationCode)
 		try {
 			await verifyEmail(verificationCode);
-			navigate("/");
+			navigate("/home");
 			toast.success("Email verified successfully");
 		} catch (error) {
 			console.log(error);
@@ -84,3 +84,4 @@ const EmailVerification = () => {
 }
 
 export default EmailVerification
+

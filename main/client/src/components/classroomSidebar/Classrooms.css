@@ -1,0 +1,17 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.classroom-side-bar{
+    position: absolute;
+    width: 70px;
+    height: 100vh;
+    background-color: #c4e3ff;
+    margin-top: 0px;
+}
+
+/* #ffdfb9 */
+/* #fff5ff */
+/* #ffe8f7 */
+/* #ffe1e2 */
