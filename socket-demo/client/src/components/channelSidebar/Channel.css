@@ -1,0 +1,14 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.channel-side-bar{
+    position: absolute;
+    width: 250px;
+    height: 100vh;
+    background-color: #ddefff;
+    margin-top: 0px;
+    margin-left: 70px;
+    z-index: 2;
+}

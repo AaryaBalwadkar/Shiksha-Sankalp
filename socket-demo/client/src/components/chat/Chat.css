@@ -1,0 +1,18 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.chat-section{
+    position: flex;
+    margin-left: 320px;
+    height: 100vh;
+    /* background-color: #c8cccf; */
+    z-index: -1;
+}
+
+.inputsection{
+    position: flex;
+    display: flexbox;
+
+}
