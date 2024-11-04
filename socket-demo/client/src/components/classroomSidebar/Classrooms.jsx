@@ -1,6 +1,6 @@
 import React from "react";
 import "./Classrooms.css";
-import ClassroomsAction from "./ClassroomsAction";
+import ClassroomsAction from "../FurtherActions/ClassroomsAction";
 import { Separator } from "../ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useState, useEffect } from "react";

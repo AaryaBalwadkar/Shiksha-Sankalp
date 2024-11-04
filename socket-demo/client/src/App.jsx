@@ -7,6 +7,8 @@ import EmailVerification from "./pages/emailVerification/EmailVerification.jsx";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { useAuthStore } from "./store/AuthStore.js";
 import AddClassroom from "./pages/pagesForEditables/addClassroom/AddClassroom.jsx";
+import AddChannelModal from "./modals/addChannelModal/AddChannelModal.jsx";
+import AddChannel from "./pages/pagesForEditables/addChannel/AddChannel.jsx";
 
 const App = () => {
   const { isCheckingAuth, checkAuth, isAuthenticated, user } = useAuthStore();
@@ -43,6 +45,12 @@ const App = () => {
             path="/home/addclassroom"
             element={
               isAuthenticated ? <AddClassroom /> : <Navigate to="/login" />
+            }
+          />
+          <Route
+            path="/home/addchannel"
+            element={
+              isAuthenticated ? <AddChannel /> : <Navigate to="/login" />
             }
           />
           <Route path="/email-verification" element={<EmailVerification />} />

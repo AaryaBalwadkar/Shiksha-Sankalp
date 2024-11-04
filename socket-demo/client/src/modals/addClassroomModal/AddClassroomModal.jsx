@@ -300,7 +300,7 @@
 import React, { useState } from "react";
 import axios from "axios"; // Add Axios for API calls
 import "./AddClassroomModal.css";
-import { useClassroomAndChannelStore } from "./ClassroomStore.js";
+import { useClassroomAndChannelStore } from "../../store/ClassroomStore.js";
 import { useNavigate } from "react-router-dom";
 
 const AddClassroomModal = () => {

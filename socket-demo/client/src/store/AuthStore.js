@@ -14,21 +14,6 @@ export const useAuthStore = create((set) => ({
 	isCheckingAuth: true,
 	message: null,
 
-	// signUp: async (email, password, name, status) => {
-	// 	set({ isLoading: true, error: null });
-	// 	const {authuser,setAuthUser} = useAuthContext()
-	// 	try {
-	// 		const response = await axios.post(`${API_URL}/signup`, { email, password, name, status });
-	// 		set({ user: response.data.user, isAuthenticated: true, isLoading: false });
-
-	// 		localStorage.setItem("classroom-user", JSON.stringify(data))
-	// 		setAuthUser(data)
-	// 		console.log(authuser)
-	// 	} catch (error) {
-	// 		set({ error: error.response.data.message || "Error signing up", isLoading: false });
-	// 		throw error;
-	// 	}
-	// },
 	signUp: async (email, password, name, status) => {
 		set({ isLoading: true, error:null })
 		try {

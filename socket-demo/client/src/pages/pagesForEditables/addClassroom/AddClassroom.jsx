@@ -1,4 +1,4 @@
-import AddClassroomModal from '@/store/AddClassroomModal.jsx'
+import AddClassroomModal from '@/modals/addClassroomModal/AddClassroomModal.jsx'
 import React from 'react'
 
 const AddClassroom = () => {

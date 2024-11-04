@@ -22,7 +22,17 @@ export const useClassroomAndChannelStore = create((set) => ({
       		console.log(response)
 
 		} catch (error) {
-			set({ error: error.response.data.message || "Error signing up", isLoading: false });
+			set({ error: error.response.data.message || "Error in creating classroom", isLoading: false });
+			throw error;
+		}
+	},
+	addChannel: async (classroomName, channelName) => {
+		try {
+			const response = await axios.post(`${API_URL}/newchannel`, { classroomName, channelName });
+      		console.log(response)
+
+		} catch (error) {
+			set({ error: error.response.data.message || "Error in creating channel", isLoading: false });
 			throw error;
 		}
 	},

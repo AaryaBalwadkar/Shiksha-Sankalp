@@ -6,6 +6,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import ChannelNavigationItem from "./ChannelNavigationItem";
 import ChannelHeader from "./ChannelHeader";
+import ChannelsAction from "../FurtherActions/ChannelsAction";
 
 const Channel = () => {
   const { id } = useParams(); // Get classroom ID from route params
@@ -37,6 +38,7 @@ const Channel = () => {
           <ChannelNavigationItem classroomId={id} channelId={channel._id} channelName={channel.channelName} />
         </div>
       ))}
+      <ChannelsAction classroomId={id} />
     </div>
     </div>
   );
