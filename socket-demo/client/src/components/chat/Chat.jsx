@@ -18,6 +18,7 @@ const Chat = () => {
   const { id, channelid, channelName } = useParams();
   const [chats, setChats] = useState([]);
   const [userDetails, setUserDetails] = useState();
+  console.log(channelid)
 
   useEffect(() => {
     const getChats = async () => {
@@ -34,12 +35,12 @@ const Chat = () => {
     setChats([]);
     getChats();
 
-    socket.emit('join_channel', {channelId: channelid})
+    // socket.emit('join_channel', {channelId: channelid})
 
-    socket.on('newMessage', (message) => {
-      console.log("Hello : ", message)
-      //setChats((preChats) => [...preChats, message])
-    })
+    // socket.on('newMessage', (message) => {
+    //   console.log("Hello : ", message)
+    //   //setChats((preChats) => [...preChats, message])
+    // })
     // let isListenerAttached = true
     // while(isListenerAttached){
     //   socket.on('newMessage', (message) => {
@@ -51,16 +52,7 @@ const Chat = () => {
 
   }, [channelid]);
 
-  const handleSendMessage = (message) => {
-    if (socket) {
-      socket.emit("sendMessage", {
-        message,
-        senderId: userDetails?.id, // Assuming you have user details
-        channelid,
-      });
-    }
-  };
-
+  console.log(chats)
   return (
     <div>
       {channelid && <ChatHeader name={channelName} />}
@@ -71,7 +63,7 @@ const Chat = () => {
       )}
       {channelid && (
         <div className="chat-section flex flex-col justify-end mb-0 pb-0 h-[94vh] bg-blue-200/30">
-          <ScrollArea className="flex-1 w-full overflow-auto h-[100vh]">
+          <ScrollArea className="flex-col justify-end w-full overflow-auto h-[100vh]">
             <ChatWelcome name={channelName} />
             {chats.map((chat) => (
               <ChatMessages
@@ -82,7 +74,7 @@ const Chat = () => {
               />
             ))}
           </ScrollArea>
-          <ChatInput name={channelName} channelid={channelid} onSendMessage={handleSendMessage} />
+          <ChatInput name={channelName} channelid={channelid}/>
         </div>
       )}
     </div>

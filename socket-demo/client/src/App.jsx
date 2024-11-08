@@ -9,6 +9,10 @@ import { useAuthStore } from "./store/AuthStore.js";
 import AddClassroom from "./pages/pagesForEditables/addClassroom/AddClassroom.jsx";
 import AddChannelModal from "./modals/addChannelModal/AddChannelModal.jsx";
 import AddChannel from "./pages/pagesForEditables/addChannel/AddChannel.jsx";
+import AddClassroomModal from "./modals/addClassroomModal/AddClassroomModal.jsx";
+import JoinClassroom from "./pages/pagesForEditables/JoinClassroom/JoinClassroom.jsx";
+import ConfirmDelete from "./pages/pagesForEditables/confirmDelete/ConfirmDelete.jsx";
+import ConfirmRemove from "./pages/pagesForEditables/confirmRemove/ConfirmRemove.jsx";
 
 const App = () => {
   const { isCheckingAuth, checkAuth, isAuthenticated, user } = useAuthStore();
@@ -53,6 +57,14 @@ const App = () => {
               isAuthenticated ? <AddChannel /> : <Navigate to="/login" />
             }
           />
+          <Route
+            path="/home/joinclassroom"
+            element={
+              isAuthenticated ? <JoinClassroom /> : <Navigate to="/login" />
+            }
+          />
+          <Route path="/home/confirmdeletion" element={<ConfirmDelete />}/>
+          <Route path="/home/confirmremove" element={<ConfirmRemove />}/>
           <Route path="/email-verification" element={<EmailVerification />} />
           <Route path="/home/:id" element={<Home />} />
           <Route path="/home/:id/:channelName/:channelid" element={<Home />} />

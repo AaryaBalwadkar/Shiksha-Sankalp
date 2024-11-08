@@ -26,13 +26,53 @@ export const useClassroomAndChannelStore = create((set) => ({
 			throw error;
 		}
 	},
-	addChannel: async (classroomName, channelName) => {
+	addChannel: async (classroomId, channelName, lock) => {
 		try {
-			const response = await axios.post(`${API_URL}/newchannel`, { classroomName, channelName });
+			const response = await axios.post(`${API_URL}/newchannel`, { classroomId, channelName, lock });
       		console.log(response)
 
 		} catch (error) {
 			set({ error: error.response.data.message || "Error in creating channel", isLoading: false });
+			throw error;
+		}
+	},
+	joinClassroom: async (code) => {
+		try {
+			const response = await axios.post(`${API_URL}/joinclassroom`, { code });
+      		console.log(response)
+
+		} catch (error) {
+			set({ error: error.response.data.message || "Error in joining classroom", isLoading: false });
+			throw error;
+		}
+	},
+	deleteClassroom: async (classroomId) => {
+		try {
+			const response = await axios.post(`${API_URL}/deleteclassroom`, { classroomId });
+      		console.log(response)
+
+		} catch (error) {
+			set({ error: error.response.data.message || "Error in joining classroom", isLoading: false });
+			throw error;
+		}
+	},
+	removeClassroom: async (classroomId) => {
+		try {
+			const response = await axios.post(`${API_URL}/removeclassroom`, { classroomId });
+      		console.log(response)
+
+		} catch (error) {
+			set({ error: error.response.data.message || "Error in joining classroom", isLoading: false });
+			throw error;
+		}
+	},
+	deleteChannel: async (classroomId) => {
+		try {
+			const response = await axios.post(`${API_URL}/deletechannel`, { classroomId });
+      		console.log(response)
+
+		} catch (error) {
+			set({ error: error.response.data.message || "Error in joining classroom", isLoading: false });
 			throw error;
 		}
 	},

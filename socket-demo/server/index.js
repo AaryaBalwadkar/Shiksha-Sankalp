@@ -4,7 +4,7 @@ import cors from 'cors'
 import AuthRoutes from './routes/AuthRoutes.js'
 import MessageRoutes from './routes/MessageRoutes.js'
 import UserRoutes from './routes/UserRoutes.js'
-import CreateClassroomAndChannelRoutes from './routes/CreateClassroomAndChennelRoutes.js'
+import ClassroomAndChannelRoutes from './routes/ClassroomAndChennelRoutes.js'
 import mongoose from 'mongoose'
 import cookieParser from 'cookie-parser'
 import { app, server } from './socket.js'
@@ -22,7 +22,7 @@ app.use(cookieParser())
 app.use("/api/auth", AuthRoutes)
 app.use("/api/messages", MessageRoutes)
 app.use("/api/user", UserRoutes)
-app.use("/api/classroom", CreateClassroomAndChannelRoutes)
+app.use("/api/classroom", ClassroomAndChannelRoutes)
 
 server.listen(PORT, () => {
     console.log("Server is running on port", PORT)

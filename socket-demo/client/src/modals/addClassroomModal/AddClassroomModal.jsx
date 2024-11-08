@@ -307,7 +307,7 @@ const AddClassroomModal = () => {
   const [classroomName, setClassroomName] = useState("");
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
-  const [error, setError] = useState(null); 
+  const [error, setError] = useState(null);
 
   const { addClassroom } = useClassroomAndChannelStore();
   const navigate = useNavigate();
@@ -358,7 +358,7 @@ const AddClassroomModal = () => {
 
   return (
     <div className="main">
-      <div className="addClassroom">
+      <div className="classroom">
         <div className="container">
           <div className="title">Create Classroom</div>
           <form className="form-box login-form" onSubmit={handleSubmit}>

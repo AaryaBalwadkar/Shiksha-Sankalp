@@ -11,10 +11,10 @@ const Channel = new mongoose.Schema(
 			type: String,
 			required: true,
 		},
-		// channelType: {
-		// 	type: String,
-		// 	required: true,
-		// },
+		lock: {
+			type: Boolean,
+			required: true,
+		},
 		messages: [
 			{
 				type: mongoose.Schema.Types.ObjectId,

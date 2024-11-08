@@ -20,7 +20,7 @@ body {
   background: transparent;
 }
 
-.addClassroom {
+.classroom {
   position: relative;
   width: 400px;
   min-height: 500px;
@@ -220,4 +220,13 @@ body {
   color: red;
   margin-top: 10px;
   font-weight: bold;
+}
+
+.label-for-checkbox{
+  padding: 20px;
+}
+
+.check-box{
+  margin-left: 20px;
+  height: 25px;
 }

@@ -10,6 +10,10 @@ const Classroom = new mongoose.Schema(
 			type: String,
 			required: true,
 		},
+		classroomCode: {
+			type: String,
+			required: true,
+		},
 		imageUrl: {
 			type: Object,
 		},

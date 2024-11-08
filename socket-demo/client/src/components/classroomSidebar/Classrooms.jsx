@@ -6,9 +6,10 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { ClassroomNavigationItem } from './ClassroomNavigationBar';
+import Logout from "./Logout";
 
 const Classrooms = () => {
-  const [classrooms, setClassrooms] = useState([]);
+  const [classrooms, setClassrooms] = useState([])
 
   useEffect(() => {
     const getClassrooms = async () => {
@@ -24,18 +25,19 @@ const Classrooms = () => {
 
     getClassrooms();
   }, []);
-  
+
   return (
     <div className="classroom-side-bar">
       <ClassroomsAction />
       <Separator className="h-[2px] bg-zinc-300 dark:bg-zinc-700 rounded-md w-10 mt-2 mx-auto" />
-      <ScrollArea className="flex-1 w-full overflow-auto h-[80vh]">
+      <ScrollArea className="flex-1 w-full overflow-auto h-[75vh]">
         {classrooms.map((classroom) => (
           <div key={classroom._id} className="mb-4">
-            <ClassroomNavigationItem id={classroom._id} className={classroom.classroomName} imageUrl={classroom.imageUrl}/>
+            <ClassroomNavigationItem id={classroom._id} className={classroom.classroomName} imageUrl={classroom.imageUrl} />
           </div>
         ))}
       </ScrollArea>
+      <Logout />
     </div>
   );
 };
