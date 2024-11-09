@@ -13,6 +13,7 @@ import AddClassroomModal from "./modals/addClassroomModal/AddClassroomModal.jsx"
 import JoinClassroom from "./pages/pagesForEditables/JoinClassroom/JoinClassroom.jsx";
 import ConfirmDelete from "./pages/pagesForEditables/confirmDelete/ConfirmDelete.jsx";
 import ConfirmRemove from "./pages/pagesForEditables/confirmRemove/ConfirmRemove.jsx";
+import LandingPage from "./pages/website/LandingPage.jsx";
 
 const App = () => {
   const { isCheckingAuth, checkAuth, isAuthenticated, user } = useAuthStore();
@@ -27,7 +28,7 @@ const App = () => {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="*" element={"WebPage"} />
+          <Route path="/*" element={<LandingPage />} />
           <Route
             path="/home/*"
             element={isAuthenticated ? <Home /> : <Navigate to="/login" />}
