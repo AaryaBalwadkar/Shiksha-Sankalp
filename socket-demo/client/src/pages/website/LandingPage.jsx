@@ -1,8 +1,8 @@
 import React from 'react'
-import Navb from '../webpages/Navb.js'
-import AppDescription from '../webpages/AppDescription.js'
-import Features from '../webpages/Features.js'
-import FooterComponent from '../webpages/FooterComponent.js'
+import Navb from '../webpages/Navb.jsx'
+import AppDescription from '../webpages/AppDescription.jsx'
+import Features from '../webpages/Features.jsx'
+import FooterComponent from '../webpages/FooterComponent.jsx'
 
 const LandingPage = () => {
   return (
