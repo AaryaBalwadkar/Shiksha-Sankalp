@@ -1,0 +1,87 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.herobg{
+    background: linear-gradient(to right, #00c2ff, #00aee5, #009acb, #0087b2, #007499);
+    align-items: center;
+}
+
+.hero {
+    margin-left: 10vw;
+    align-items: center;
+    height: 100vh;
+    width: 80vw;
+    min-height: 100vh;
+    position: relative;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.herocharacter {
+    position: relative;
+}
+
+.idea {
+    height: 90px;
+    width: 20px;
+    font-size: 80px;
+    color: white;
+}
+
+.hero-text{
+    padding: 20px;
+}
+
+.typing-effect{
+    height: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    color: white;
+}
+
+.hero-text h1{
+    font-family: "Permanent Marker", serif;
+    font-weight: 400;
+    font-size: 90px;
+    line-height: 1;
+    color: white;
+    margin: 0 0 40px;
+    font-style: normal;
+    text-align: center;
+}
+
+.hero-text h4{
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.content{
+    color: white;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 40px;
+}
+
+.hero-text button{
+    display: inline-block;
+    color: white;
+    background: #00c2ff;
+    border: 1px solid transparent;
+    padding: 12px 30px;
+    line-height: 1.4;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .55s ease;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    text-align: center;
+}
