@@ -1,70 +1,105 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Shiksha Sankalp 🎓  
 
-In the project directory, you can run:
+**A Collaborative Platform Inspired by Discord and Slack**  
 
-### `npm start`
+Shiksha Sankalp is a communication and collaboration platform designed for educational purposes. It is a next-generation platform designed to empower users with seamless communication, collaboration, and creativity. Whether you're managing a community or building your own online presence, Shiksha Sankalp helps you stay connected with your team, friends, and other users
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Features  
+- **Real-Time Communication**: Engage with peers and educators through instant messaging.  
+- **Classrooms**: Educators can create classrooms.  
+- **Channel-Based Organization**: Create and manage topic-based channels for focused discussions.  
+- **User Authentication**: Secure login and role-based access for different users.  
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Technology Stack  
 
-### `npm run build`
+| **Category**       | **Technology**                      |  
+|--------------------|-------------------------------------|  
+| **Frontend**       | HTML, CSS, JavaScript, React.js     |  
+| **Backend**        | Node.js, Express.js                 |  
+| **Database**       | MongoDB (Atlas)                     |  
+| **Other Tools**    | Vite, Socket.io, RESTful APIs, Axios|  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📂 Project Structure  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+Shiksha_Sankalp/  
+├── client/                # Frontend files  
+│   ├── assets/            # Static assets (images, icons, etc.)  
+│   ├── src/               # Main React source code  
+│       ├── components/    # Reusable components  
+│       ├── App.jsx        # Root component  
+│       └── index.html     # HTML template  
+├── server/                # Backend files  
+│   ├── controller/        # Controller logic for routes  
+│   ├── middleware/        # Authentication and validation middlewares  
+│   ├── model/             # Database models  
+│   ├── routes/            # API route handlers  
+│   ├── utils/             # Utility functions  
+│   ├── index.js           # Entry point for the server  
+│   └── socket.js          # WebSocket integration using Socket.io  
+├── README.md              # Project documentation  
+```  
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## ⚙️ Installation  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prerequisites  
+Make sure you have the following installed:  
+- [Node.js](https://nodejs.org/)  
+- [npm](https://www.npmjs.com/)  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Steps  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### Frontend Setup  
+1. Navigate to the **client** directory:  
+   ```bash  
+   cd client  
+   ```  
+2. Install dependencies:  
+   ```bash  
+   npm install  
+   ```  
+3. Start the development server:  
+   ```bash  
+   npm run dev  
+   ```  
 
-## Learn More
+#### Backend Setup  
+1. Navigate to the **server** directory:  
+   ```bash  
+   cd server  
+   ```  
+2. Install dependencies:  
+   ```bash  
+   npm install  
+   ```  
+3. Update the `.env` file with the following credentials:  
+   ```env  
+   PORT=5000  
+   MONGO_URI=mongodb+srv://your-username:your-password@your-cluster.mongodb.net/database-name?retryWrites=true&w=majority  
+   JWT_SECRET=your-jwt-secret  
+   NODE_ENV=development  
+   MAILTRAP_TOKEN=your-mailtrap-token  
+   ```  
+   Replace the placeholder values (`your-username`, `your-password`, etc.) with your actual credentials.  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Start the server:  
+   ```bash  
+   npm run dev  
+   ```  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 🎯 Highlights  
+Shiksha Sankalp is designed to simplify communication and collaboration in educational settings. By blending the features of Discord and Slack, it ensures a streamlined and user-friendly experience for all users.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
