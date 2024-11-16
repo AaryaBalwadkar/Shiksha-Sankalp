@@ -74,15 +74,11 @@ Make sure you have the following installed:
    ```  
 
 #### Backend Setup  
-1. Navigate to the **server** directory:  
-   ```bash  
-   cd server  
-   ```  
-2. Install dependencies:  
+1. Install dependencies:  
    ```bash  
    npm install  
    ```  
-3. Update the `.env` file with the following credentials:  
+2. Update the `.env` file with the following credentials:  
    ```env  
    PORT=5000  
    MONGO_URI=mongodb+srv://your-username:your-password@your-cluster.mongodb.net/database-name?retryWrites=true&w=majority  
@@ -92,7 +88,7 @@ Make sure you have the following installed:
    ```  
    Replace the placeholder values (`your-username`, `your-password`, etc.) with your actual credentials.  
 
-4. Start the server:  
+3. Start the server:  
    ```bash  
    npm run dev  
    ```  
